@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edeili Nutrition - Mega Té Delivery</title>
+    <link rel="stylesheet" href="edeili_nutrition_menu.css">
+</head>
+<body>
+    <button id="main-menu-icon" aria-label="Abrir menú principal">
+        <div class="hamburger-lines"></div>
+        <div class="hamburger-lines"></div>
+        <div class="hamburger-lines"></div>
+    </button>
+    <div id="main-menu-dropdown">
+        <a href="#" id="contacto-link">Contacto</a>
+    </div>
+    <div class="container" id="main-container">
+        <div class="branding" id="branding-block">
+            <img src="Edeili.png" alt="Edeili Nutrition Logo" class="logo">
+            <div class="business-info">
+                <!--<span class="business-name">Edeili Nutrition</span>-->
+                <span class="subtitle">Mega Té Delivery</span>
+            </div>
+        </div>
+        <div class="order-form">
+            <h2>Menú:</h2>
+            <div id="cart-icon-container" style="text-align:right; margin-bottom:8px;">
+                <button id="cart-icon" style="background:none; border:none; cursor:pointer; position:relative;">
+                    <span style="font-size:1.7em;">🛒</span>
+                    <span id="cart-count" style="position:absolute; top:0; right:0; background:#2e7d32; color:#fff; border-radius:50%; padding:2px 7px; font-size:0.9em; min-width:22px; text-align:center;">0</span>
+                </button>
+            </div>
+            <div id="menu-list"></div>
+        </div>
+        <div class="cart-page" style="display:none;">
+            <h2>Carrito:</h2>
+            <ul id="cart-items"></ul>
+            <div class="cart-page-buttons">
+                <button id="cancel-cart">Cancelar</button>
+                <button id="go-to-info">Continuar</button>
+            </div>
+        </div>
+        <div class="info-form" style="display:none;">
+    <h2>Información de Entrega</h2>
+    <form id="delivery-form" action="https://formspree.io/f/mjkrjokn" method="POST">
+      <div class="form-row">
+        <label for="nombre">Nombre:</label>
+        <input id="nombre" name="nombre" type="text" required>
+      </div>
+      <div class="form-row">
+        <label for="direccion">Dirección:</label>
+        <input id="direccion" name="direccion" type="text" required>
+      </div>
+      <div class="form-row">
+        <label for="telefono">Teléfono:</label>
+        <input
+          id="telefono"
+          name="telefono"
+          type="tel"
+          required
+          pattern="^\d{3}-?\d{3}-?\d{4}$"
+          placeholder=""
+          title="Formato requerido: 123-456-7890 o 1234567890"
+        />
+      </div>
+      <input type="hidden" name="resumen" id="resumen-field">
+      <button type="submit">Ordenar</button>
+      <button type="button" id="cancel-info">Cancelar</button>
+      <button type="button" id="back-to-cart">Volver al Carrito</button>
+    </form>
+        </div>
+        <div class="thankyou-page" style="display:none;">
+            <h2 id="thankyou-title">¡Gracias!</h2>
+            <p>Su orden ha sido recibida.</p>
+            <div id="order-summary"></div> <!--Resumen de la orden-->
+            <button id="back-to-main">Regresar al menú principal</button>
+        </div>
+        <div id="options-modal" class="modal" style="display:none;">
+            <div class="modal-content" style="position:relative;">
+                <!-- Confirmation overlay for edit feedback -->
+                <div id="personalizar-confirm" style="display:none;position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);background:#e8f5e9;color:#2e7d32;padding:18px 32px;border-radius:12px;font-size:1.2em;z-index:1001;box-shadow:0 2px 12px #0002;">
+                  <span style="font-size:1.5em;vertical-align:middle;">✔️</span> ¡Guardado!
+                </div>
+                <h3>Personalizar:</h3>
+                <label><input type="checkbox"> Fibra +$2</label><br>
+                <label><input type="checkbox"> Immunity +$2</label><br>
+                <label><input type="checkbox"> Creatina $2</label><br>
+                <label><input type="checkbox"> Probiótico $2</label><br>
+                <label><input type="checkbox"> Best Defense(Vitamin C) +$2</label><br>
+                <label><input type="checkbox"> Doble Liftoff $3</label><br>
+                <label><input type="checkbox"> 1/2 Liftoff</label><br>
+                <label><input type="checkbox"> Whipped Cream</label><br>
+                <label><input type="checkbox"> Coco Rallado</label><br>
+                <label id="sin-pulpa-label" style="display:none;"><input type="checkbox"> Sin pulpa</label><br>
+                <!-- Comentarios box below all options -->
+                <div style="margin: 10px 0 10px 0;">
+                    <label for="item-comment-box">Comentarios:</label><br>
+                    <textarea id="item-comment-box" rows="2" style="width:98%; resize:vertical;"></textarea>
+                </div>
+                <button id="add-to-cart">Agregar al carrito</button>
+                <button id="go-to-cart">Ir al Carrito</button>
+                <button id="cancel-modal">Cancelar</button>
+            </div>
+        </div>
+        <div id="cart-popup" class="cart-popup" style="display:none; position:fixed; top:0; right:0; width:340px; max-width:90vw; height:100vh; background:#fff; box-shadow:-2px 0 16px rgba(0,0,0,0.18); z-index:1002; padding:24px 18px 18px 18px; overflow-y:auto;">
+            <button id="close-cart-popup" style="position:absolute; top:10px; right:10px; background:none; border:none; font-size:1.5em; cursor:pointer;">&times;</button>
+            <h2 style="margin-top:0;">Carrito:</h2>
+            <ul id="cart-popup-items"></ul>
+            <div class="cart-popup-buttons" style="margin-top:18px;">
+                <button id="cancel-cart-popup">Cancelar</button>
+                <button id="go-to-info-popup">Continuar</button>
+            </div>
+        </div>
+    </div>
+    <script src="edeili_nutrition_menu.js"></script>
+</body>
+</html>
