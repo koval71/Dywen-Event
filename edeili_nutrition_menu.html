@@ -42,31 +42,33 @@
             </div>
         </div>
         <div class="info-form" style="display:none;">
-            <h2>Información de Entrega</h2>
-            <form id="delivery-form">
-            <div class="form-row">
-                <label for="nombre">Nombre:</label>
-                <input id="nombre" type="text" required>
-            </div>
-            <div class="form-row">
-                <label for="direccion">Dirección:</label>
-                <input id="direccion" type="text" required>
-            </div>
-            <div class="form-row">
-                <label for="telefono">Teléfono:</label>
-                <input
-                id="telefono"
-                type="tel"
-                required
-                pattern="^\d{3}-?\d{3}-?\d{4}$"
-                placeholder=""
-                title="Formato requerido: 123-456-7890 o 1234567890"
-                />
-            </div>
-            <button type="submit">Ordenar</button>
-            <button type="button" id="cancel-info">Cancelar</button>
-            <button type="button" id="back-to-cart">Volver al Carrito</button>
-            </form>  
+    <h2>Información de Entrega</h2>
+    <form id="delivery-form" action="https://formspree.io/f/mjkrjokn" method="POST">
+      <div class="form-row">
+        <label for="nombre">Nombre:</label>
+        <input id="nombre" name="nombre" type="text" required>
+      </div>
+      <div class="form-row">
+        <label for="direccion">Dirección:</label>
+        <input id="direccion" name="direccion" type="text" required>
+      </div>
+      <div class="form-row">
+        <label for="telefono">Teléfono:</label>
+        <input
+          id="telefono"
+          name="telefono"
+          type="tel"
+          required
+          pattern="^\d{3}-?\d{3}-?\d{4}$"
+          placeholder=""
+          title="Formato requerido: 123-456-7890 o 1234567890"
+        />
+      </div>
+      <input type="hidden" name="resumen" id="resumen-field">
+      <button type="submit">Ordenar</button>
+      <button type="button" id="cancel-info">Cancelar</button>
+      <button type="button" id="back-to-cart">Volver al Carrito</button>
+    </form>
         </div>
         <div class="thankyou-page" style="display:none;">
             <h2 id="thankyou-title">¡Gracias!</h2>

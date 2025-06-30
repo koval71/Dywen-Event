@@ -383,6 +383,20 @@ if (infoForm) {
     });
 }
 
+// Before submitting the form, set the resumen hidden field
+const deliveryForm = document.getElementById('delivery-form');
+if (deliveryForm) {
+    deliveryForm.addEventListener('submit', function(e) {
+        // Set resumen hidden field to the order summary text
+        const resumenField = document.getElementById('resumen-field');
+        const orderSummaryDiv = document.getElementById('order-summary');
+        if (resumenField && orderSummaryDiv) {
+            resumenField.value = orderSummaryDiv.innerText;
+        }
+        // Let the form submit to Formspree
+    });
+}
+
 // Cart popup logic
 function renderCartPopup() {
     if (!cartPopupItems) return;
