@@ -42,6 +42,7 @@
             <div id="booking-form" class="booking-form-panel">
                 <h3>Información</h3>
                 <form autocomplete="off" id="event-form" action="https://formspree.io/f/myzjagbk" method="POST">
+                    <label>Fecha:<br><input type="text" id="selected-date" name="fecha" readonly></label><br>
                     <label>Nombre:<br><input type="text" name="nombre" required></label><br>
                     <label>Email:<br><input type="email" name="email"></label><br>
                     <label>Teléfono:<br><input type="tel" name="telefono" required pattern="^\d{3}-?\d{3}-?\d{4}$" inputmode="tel" title="Formato requerido: 123-456-7890 o 1234567890"></label><br>
@@ -141,7 +142,6 @@
                             <option>Papelería</option>
                         </select>
                     </label><br>
-                    <label>Fecha:<br><input type="text" id="selected-date" name="fecha" readonly></label><br>
                     <label>Hora:<br>
                         <select id="selected-time" name="hora" required>
                             <option value="">Selecciona una hora</option>
