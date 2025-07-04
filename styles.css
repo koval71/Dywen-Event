@@ -1,0 +1,530 @@
+/* Rose gold popup overlay */
+.rose-popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.25);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+/* Rose gold popup content */
+.rose-popup-content {
+  background: linear-gradient(135deg,#f7cac9 0%,#fff0f5 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(183,110,121,0.18);
+  padding: 2.5rem 2rem;
+  max-width: 90vw;
+  text-align: center;
+  position: relative;
+}
+.rose-popup-content h2 {
+  color: #b76e79;
+  margin-bottom: 1rem;
+}
+.rose-popup-content p {
+  color: #a05a65;
+  font-size: 1.1em;
+}
+.rose-popup-close {
+  margin-top: 1.5rem;
+  padding: 10px 28px;
+  font-size: 1.1em;
+  border-radius: 8px;
+  background: #b76e79;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.rose-popup-close:hover {
+  background: #a05a65;
+}
+/* Gray X close button for confirmation popup */
+.rose-popup-x {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2;
+    padding: 0;
+    line-height: 1;
+    transition: color 0.2s;
+}
+.rose-popup-x:hover {
+    color: #b76e79;
+}
+/* Booking form panel */
+ .booking-form-panel {
+  display: none;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(183,110,121,0.18);
+  padding: 2.5rem 2rem;
+  max-width: 90vw;
+  min-width: 320px;
+  margin: 2rem auto 0 auto;
+  text-align: center;
+}
+/* Rose gold effect for Inicio button in logo */
+.logo .menu-link {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    border-radius: 8px;
+    background: linear-gradient(135deg,#f7cac9 0%,#fff0f5 100%);
+    box-shadow: 0 2px 8px rgba(183,110,121,0.10);
+    border: 1.5px solid #b76e79;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    margin-right: 8px;
+    min-width: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--logo-width);
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+}
+.logo {
+    font-weight: bold;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    --logo-width: auto;
+}
+@media (max-width: 700px) {
+    #external-reservar-btn {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10000;
+        width: 100vw;
+        max-width: 100vw;
+        border-radius: 0;
+        margin: 0;
+        padding: 18px 0;
+        font-size: 1.2em;
+        box-shadow: 0 -2px 16px rgba(183,110,121,0.13);
+    }
+}
+.reservar-btn {
+    display: block;
+    margin: 18px auto 0 auto;
+    padding: 10px 28px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    background: #b76e79;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    align-self: center;
+}
+.reservar-btn:hover {
+    background: #a05a65;
+}
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #222;
+    min-height: 100vh;
+}
+.background {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('planner3.jpg') no-repeat center center/cover;
+    z-index: -1;
+    filter: brightness(0.7) blur(2px);
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.85);
+    padding: 0.5rem 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.logo {
+    font-weight: bold;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    --logo-width: auto;
+}
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 8px;
+    background: linear-gradient(135deg,#f7cac9 0%,#fff0f5 100%);
+    box-shadow: 0 2px 8px rgba(183,110,121,0.10);
+    border: 1.5px solid #b76e79;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+    margin-top: 2px;
+}
+.menu li a:hover {
+    color: #fff;
+    background: linear-gradient(135deg,#b76e79 0%,#fff0f5 100%);
+    box-shadow: 0 4px 16px rgba(183,110,121,0.18);
+    border-color: #a05a65;
+}
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+#menu-toggle {
+    display: none;
+}
+@media (max-width: 700px) {
+    .menu {
+        flex-direction: row;
+        background: transparent;
+        position: static;
+        top: auto;
+        right: auto;
+        width: auto;
+        display: flex !important;
+        box-shadow: none;
+        gap: 1rem;
+        justify-content: flex-end;
+        margin: 0;
+        padding: 0;
+    }
+    .menu li a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 500;
+        padding: 10px 18px;
+        border-radius: 8px;
+        background: linear-gradient(135deg,#f7cac9 0%,#fff0f5 100%);
+        box-shadow: 0 2px 8px rgba(183,110,121,0.10);
+        border: 1.5px solid #b76e79;
+        transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        margin: 8px 0;
+        display: block;
+        text-align: center;
+    }
+    .menu li a:hover {
+        color: #fff;
+        background: linear-gradient(135deg,#b76e79 0%,#fff0f5 100%);
+        box-shadow: 0 4px 16px rgba(183,110,121,0.18);
+        border-color: #a05a65;
+    }
+    #menu-toggle,
+    .menu-icon {
+        display: none !important;
+    }
+    .contacto {
+        max-width: 100vw;
+        padding: 1.2rem 0.2rem;
+    }
+    .planners-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .planner-img {
+        width: 98vw;
+        max-width: 340px;
+        height: auto;
+        aspect-ratio: 4/3;
+        object-fit: contain;
+    }
+}
+.hero {
+    text-align: center;
+    padding: 4rem 1rem 2rem 1rem;
+    color: #fff;
+    text-shadow: 0 2px 8px #0008;
+}
+.servicios, .reservar, .contacto {
+    background: rgba(255,255,255,0.92);
+    margin: 2rem auto;
+    max-width: 700px;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.reservar {
+    background: linear-gradient(135deg, #f7cac9 0%, #fff0f5 100%);
+    margin: 2rem auto;
+    max-width: 700px;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.contacto {
+    background: rgba(255,255,255,0.97);
+    margin: 2rem auto;
+    max-width: 700px;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.reservar h2,
+#calendar {
+    align-self: center;
+    text-align: center;
+}
+.servicios ul, .contacto ul {
+    padding-left: 1.2rem;
+}
+#calendar {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#booking-form {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form input, form button {
+    width: 100%;
+    margin-bottom: 0.7rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+form button {
+    background: #b76e79;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+form button:hover {
+    background: #a05a65;
+}
+form select {
+    width: 100%;
+    margin-bottom: 0.7rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background: #fff;
+    color: #222;
+    box-sizing: border-box;
+}
+form select:focus {
+    border-color: #b76e79;
+    outline: none;
+}
+.calendar-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.calendar-controls select {
+    padding: 0.4rem 0.7rem;
+    border-radius: 6px;
+    border: 1px solid #b76e79;
+    font-size: 1rem;
+    background: #fff;
+    color: #b76e79;
+    font-weight: bold;
+    outline: none;
+    transition: border 0.2s;
+}
+.calendar-table {
+    border-collapse: separate;
+    border-spacing: 6px;
+    width: 100%;
+    max-width: 350px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 12px;
+    margin: 0 auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+.calendar-table th {
+    color: #b76e79;
+    font-weight: bold;
+    padding: 0.3rem 0.2rem;
+    text-align: center;
+}
+.calendar-cell {
+    border: 2px solid #b76e79;
+    border-radius: 8px;
+    text-align: center;
+    padding: 0.7rem 0.2rem;
+    font-size: 1.1rem;
+    background: #fff;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, border-color 0.2s;
+    color: #b76e79;
+    box-shadow: 0 1px 4px rgba(183,110,121,0.07);
+}
+.calendar-cell.available:hover {
+    background: linear-gradient(90deg, #f7cac9 0%, #b76e79 100%);
+    color: #fff;
+    border-color: #f7cac9;
+    box-shadow: 0 2px 8px rgba(183,110,121,0.18);
+}
+.calendar-cell.unavailable {
+    background: #eee;
+    color: #bbb;
+    border-color: #ddd;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+.planners-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 18px;
+    margin-top: 28px;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+.planner-img {
+    width: 180px;
+    height: 220px;
+    max-width: 30vw;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    object-fit: cover;
+    background: #fff;
+    display: block;
+}
+.reservar form {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.reservar form input,
+.reservar form select {
+    width: 100%;
+    box-sizing: border-box;
+}
+.reservar form button[type="submit"] {
+    display: block;
+    margin: 18px auto 0 auto;
+    padding: 10px 28px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    background: #b76e79;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    align-self: center;
+}
+.reservar form button[type="submit"]:hover {
+    background: #a05a65;
+}
+/* Confirmation popup: black text override */
+#confirmation-popup .rose-popup-content h2,
+#confirmation-popup .rose-popup-content p {
+    color: #222 !important;
+}
+@media (max-width: 900px) {
+    .servicios, .reservar {
+        max-width: 98vw;
+        padding: 1.2rem 0.2rem;
+    }
+    .contacto {
+        max-width: 98vw;
+        padding: 1.2rem 0.2rem;
+    }
+    .planners-row {
+        gap: 8px;
+    }
+    .planner-img {
+        width: 32vw;
+        height: 120px;
+        max-width: 180px;
+    }
+}
+@media (max-width: 700px) {
+    .menu {
+        flex-direction: column;
+        background: rgba(255,255,255,0.95);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 180px;
+        display: none;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    #menu-toggle:checked + .menu-icon + .menu {
+        display: flex;
+    }
+    .menu-icon {
+        display: block;
+    }
+    .contacto {
+        max-width: 100vw;
+        padding: 1.2rem 0.2rem;
+    }
+    .planners-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .planner-img {
+        width: 98vw;
+        max-width: 340px;
+        height: auto;
+        aspect-ratio: 4/3;
+        object-fit: contain;
+    }
+}
+@media (max-width: 600px) {
+    .planners-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .planner-img {
+        width: 98vw;
+        max-width: 340px;
+        height: auto;
+        aspect-ratio: 4/3;
+        object-fit: contain;
+    }
+}

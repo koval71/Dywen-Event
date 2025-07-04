@@ -1,1 +1,191 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dywen Event Planner</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="calendar.js"></script>
+</head>
+<body>
+    <div class="background"></div>
+    <nav class="navbar">
+        <div class="logo"><a href="contact.html" class="menu-link">Contacto</a>  <span style="font-style:italic;">Dywen Event Planner</span></div>
+    </nav>
+    <main>
+        <section id="inicio" class="hero">
+            <h1>Coordinación y Decoración de Eventos</h1>
+        </section>
+        <!-- Custom Rose Gold Popup removed -->
+        <section id="servicios" class="servicios">
+            <h2>Servicios</h2>
+            <ul>
+                <li>Eventos Corporativos</li>
+                <li>Bodas</li>
+                <li>Quinceañeros</li>
+                <li>Baby Shower</li>
+                <li>Gender Reveal</li>
+                <li>Cumpleaños</li>
+                <li>Flores</li>
+                <li>Personalizados</li>
+                <li>Papelería</li>
+            </ul>
+            <div class="planners-row">
+                <img src="planner1.jpg" alt="Planner 1" class="planner-img">
+                <img src="planner2.jpg" alt="Planner 2" class="planner-img">
+                <img src="planner3.jpg" alt="Planner 3" class="planner-img">
+            </div>
+        </section>
+        <section id="reservar" class="reservar">
+            <h2>Fecha de Evento</h2>
+            <div id="calendar"></div>
+            <div id="booking-form" class="booking-form-panel">
+                <h3>Información</h3>
+                <form autocomplete="off" id="event-form" action="https://formspree.io/f/myzjagbk" method="POST">
+                    <label>Nombre:<br><input type="text" name="nombre" required></label><br>
+                    <label>Email:<br><input type="email" name="email"></label><br>
+                    <label>Teléfono:<br><input type="tel" name="telefono" required pattern="^\d{3}-?\d{3}-?\d{4}$" inputmode="tel" title="Formato requerido: 123-456-7890 o 1234567890"></label><br>
+                    <label>Pueblo:<br>
+                        <select name="pueblo" required>
+                            <option value="">Selecciona un pueblo</option>
+                            <option>Aguada</option>
+                            <option>Aguadilla</option>
+                            <option>Aguas Buenas</option>
+                            <option>Aibonito</option>
+                            <option>Añasco</option>
+                            <option>Adjuntas</option>
+                            <option>Arecibo</option>
+                            <option>Arroyo</option>
+                            <option>Barceloneta</option>
+                            <option>Barranquitas</option>
+                            <option>Bayamón</option>
+                            <option>Cabo Rojo</option>
+                            <option>Caguas</option>
+                            <option>Camuy</option>
+                            <option>Canóvanas</option>
+                            <option>Carolina</option>
+                            <option>Cataño</option>
+                            <option>Cayey</option>
+                            <option>Ceiba</option>
+                            <option>Ciales</option>
+                            <option>Cidra</option>
+                            <option>Cabo Rojo</option>
+                            <option>Coamo</option>
+                            <option>Comerío</option>
+                            <option>Corozal</option>
+                            <option>Dorado</option>
+                            <option>Fajardo</option>
+                            <option>Florida</option>
+                            <option>Guánica</option>
+                            <option>Guayama</option>
+                            <option>Guayanilla</option>
+                            <option>Guaynabo</option>
+                            <option>Gurabo</option>
+                            <option>Hatillo</option>
+                            <option>Hormigueros</option>
+                            <option>Humacao</option>
+                            <option>Isabela</option>
+                            <option>Jayuya</option>
+                            <option>Juana Díaz</option>
+                            <option>Juncos</option>
+                            <option>Lajas</option>
+                            <option>Lares</option>
+                            <option>Las Marías</option>
+                            <option>Las Piedras</option>
+                            <option>Loíza</option>
+                            <option>Luquillo</option>
+                            <option>Manatí</option>
+                            <option>Maricao</option>
+                            <option>Maunabo</option>
+                            <option>Mayagüez</option>
+                            <option>Moca</option>
+                            <option>Morovis</option>
+                            <option>Naguabo</option>
+                            <option>Naranjito</option>
+                            <option>Orocovis</option>
+                            <option>Patillas</option>
+                            <option>Peñuelas</option>
+                            <option>Ponce</option>
+                            <option>Quebradillas</option>
+                            <option>Rincón</option>
+                            <option>Río Grande</option>
+                            <option>Sabana Grande</option>
+                            <option>Salinas</option>
+                            <option>San Germán</option>
+                            <option>San Juan</option>
+                            <option>San Lorenzo</option>
+                            <option>San Sebastián</option>
+                            <option>Santa Isabel</option>
+                            <option>Toa Alta</option>
+                            <option>Toa Baja</option>
+                            <option>Trujillo Alto</option>
+                            <option>Utuado</option>
+                            <option>Vega Alta</option>
+                            <option>Vega Baja</option>
+                            <option>Villalba</option>
+                            <option>Yabucoa</option>
+                            <option>Yauco</option>
+                        </select>
+                    </label><br>
+                    <label>Evento:<br>
+                        <select name="evento" required>
+                            <option value="">Selecciona un evento</option>
+                            <option>Evento Corporativo</option>
+                            <option>Boda</option>
+                            <option>Quinceañero</option>
+                            <option>Baby Shower</option>
+                            <option>Gender Reveal</option>
+                            <option>Cumpleaño</option>
+                            <option>Flores</option>
+                            <option>Personalizados</option>
+                            <option>Papelería</option>
+                        </select>
+                    </label><br>
+                    <label>Fecha:<br><input type="text" id="selected-date" name="fecha" readonly></label><br>
+                    <label>Hora:<br>
+                        <select id="selected-time" name="hora" required>
+                            <option value="">Selecciona una hora</option>
+                            <option>8:00 am</option>
+                            <option>8:30 am</option>
+                            <option>9:00 am</option>
+                            <option>9:30 am</option>
+                            <option>10:00 am</option>
+                            <option>10:30 am</option>
+                            <option>11:00 am</option>
+                            <option>11:30 am</option>
+                            <option>12:00 pm</option>
+                            <option>12:30 pm</option>
+                            <option>1:00 pm</option>
+                            <option>1:30 pm</option>
+                            <option>2:00 pm</option>
+                            <option>2:30 pm</option>
+                            <option>3:00 pm</option>
+                            <option>3:30 pm</option>
+                            <option>4:00 pm</option>
+                            <option>4:30 pm</option>
+                            <option>5:00 pm</option>
+                            <option>5:30 pm</option>
+                            <option>6:00 pm</option>
+                            <option>6:30 pm</option>
+                            <option>7:00 pm</option>
+                            <option>7:30 pm</option>
+                            <option>8:00 pm</option>
+                        </select>
+                    </label><br>
+                    <div style="display:flex;justify-content:center;margin-top:2.5rem;">
+                        <button id="external-reservar-btn" class="reservar-btn" style="display:block;min-width:160px;">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <!-- Rose Gold Confirmation Popup -->
+        <div id="confirmation-popup" class="rose-popup-overlay">
+            <div class="rose-popup-content">
+                <button id="close-confirmation-btn" class="rose-popup-x" aria-label="Cerrar">&times;</button>
+                <h2>¡Gracias, hemos recibido su solicitud!</h2>
+                <p>Pronto nos estaremos comunicando con usted.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
